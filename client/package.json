@@ -9,6 +9,9 @@
     "react-router-dom": "4.3.1",
     "axios": "0.18.0"
   },
+  "resolutions": {
+    "serialize-javascript": "^2.1.2"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
