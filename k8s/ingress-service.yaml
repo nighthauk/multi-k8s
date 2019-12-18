@@ -3,10 +3,10 @@ kind: Ingress
 metadata:
   name: ingress-service
   annotations:
-    kubernetes.io/ingress.class: nginx
-    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    #kubernetes.io/ingress.class: nginx
+    # nginx.ingress.kubernetes.io/rewrite-target: /$2
     cert-manager.io/cluster-issuer: 'letsencrypt-prod'
-    nginx.ingress.kubernetes.io/ssl-redirect: 'true'
+    # nginx.ingress.kubernetes.io/ssl-redirect: 'true'
 spec:
   tls:
     - hosts:
@@ -15,24 +15,24 @@ spec:
       secretName: fredfossil-com
   rules:
     - host: fredfossil.com
-    - http:
+      http:
         paths:
-          - path: /?(.*)
-            backend:
-              serviceName: client-cluster-ip-service
-              servicePort: 3000
-          - path: /api/?(.*)
-            backend:
-              serviceName: server-cluster-ip-service
-              servicePort: 5000
+        - path: /?(.*)
+          backend:
+            serviceName: client-cluster-ip-service
+            servicePort: 3000
+        - path: /api/?(.*)
+          backend:
+            serviceName: server-cluster-ip-service
+            servicePort: 5000
     - host: www.fredfossil.com
-    - http:
+      http:
         paths:
-          - path: /?(.*)
-            backend:
-              serviceName: client-cluster-ip-service
-              servicePort: 3000
-          - path: /api/?(.*)
-            backend:
-              serviceName: server-cluster-ip-service
-              servicePort: 5000              
+        - path: /?(.*)
+          backend:
+            serviceName: client-cluster-ip-service
+            servicePort: 3000
+        - path: /api/?(.*)
+          backend:
+            serviceName: server-cluster-ip-service
+            servicePort: 5000              
