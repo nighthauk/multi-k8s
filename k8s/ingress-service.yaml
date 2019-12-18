@@ -10,9 +10,9 @@ metadata:
 spec:
   tls:
     - hosts:
-        - fredfossil.com
-        - www.fredfossil.com
-      secretName: k8s-multi-com
+      - fredfossil.com
+      - www.fredfossil.com
+      secretName: fredfossil-com
   rules:
     - host: fredfossil.com
     - http:

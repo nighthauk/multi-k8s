@@ -1,9 +1,9 @@
 apiVersion: cert-manager.io/v1alpha2
 kind: Certificate
 metadata:
-  name: k8s-multi-com-tls
+  name: fredfossil-com-tls
 spec:
-  secretName: k8s-multi-com
+  secretName: fredfossil-com
   issuerRef:
     name: letsencrypt-prod
     kind: ClusterIssuer
